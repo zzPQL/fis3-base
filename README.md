@@ -5,7 +5,7 @@
 fis3 base有如下功能特色。
 - commonjs
 - ECMASCript2015
-- [SASS](http://sass-lang.com/) & [Compass](http://compass-style.org/)
+- [LESS] & [Compass](http://compass-style.org/)
 - [autoprefixer](https://github.com/postcss/autoprefixer)
 - [fis components](https://github.com/fis-components)
 - [data.js](https://github.com/yanhaijing/data.js)
