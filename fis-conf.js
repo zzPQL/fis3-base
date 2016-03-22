@@ -44,11 +44,11 @@ fis.match('/modules/(**)', {
 })
 
 // 配置css
-fis.match(/^\/modules\/(.*\.scss)$/i, {
+fis.match(/^\/modules\/(.*\.less)$/i, {
     rExt: '.css',
     isMod: true,
     release: '${project.static}/$1',
-    parser: fis.plugin('sass', {
+    parser: fis.plugin('less', {
         include_paths: ['modules/css', 'components'] // 加入文件查找目录
     }),
     postprocessor: fis.plugin('autoprefixer', {
@@ -133,7 +133,7 @@ fis.util.map(map, function (k, v) {
             useHash: true,
             domain: domain
         })
-        .match('**.{scss,css}', {
+        .match('**.{less,css}', {
             useSprite: true,
             useHash: true,
             domain: domain
@@ -165,13 +165,13 @@ fis.util.map(map, function (k, v) {
         .match('/components/**.js', {
             packTo: '/pkg/components.js'
         })
-        .match('/modules/**.{scss,css}', {
+        .match('/modules/**.{less,css}', {
             packTo: '/pkg/modules.css'
         })
-        .match('/modules/css/**.{scss,css}', {
+        .match('/modules/css/**.{less,css}', {
             packTo: ''
         })
-        .match('/modules/css/common.scss', {
+        .match('/modules/css/common.less', {
             packTo: '/pkg/common.css'
         })
         .match('/modules/**.{es,js}', {
@@ -188,7 +188,7 @@ fis.media('prd')
     .match('**.{es,js}', {
         optimizer: fis.plugin('uglify-js')
     })
-    .match('**.{scss,css}', {
+    .match('**.{less,css}', {
         optimizer: fis.plugin('clean-css', {
             'keepBreaks': true //保持一个规则一个换行
         })
